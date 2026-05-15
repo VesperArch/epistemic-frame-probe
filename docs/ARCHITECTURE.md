@@ -85,7 +85,7 @@ Provider-agnostic design matters here because the system's findings may vary acr
 1. Add the provider name and model identifier to `_PROVIDER_MODELS` in `classifier.py`.
 2. Implement an async function `_call_llm_<provider>(prompt: str) -> str` that initializes the provider client from an environment variable, calls the API with `_SYSTEM_PROMPT` as the system instruction, and returns the text response.
 3. Add the provider name and function reference to `_PROVIDER_DISPATCH`.
-4. Add the API key variable to `.env.example` and `README.md`.
+4. Add the API key variable to `.env.example`.
 
 No other changes are required. The server, schemas, and tests are unaffected.
 

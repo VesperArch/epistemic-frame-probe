@@ -164,7 +164,7 @@ async def _call_llm_gemini(prompt: str) -> str:
         system_instruction=_SYSTEM_PROMPT,
     )
     # Gemini's async generation runs in a thread executor to avoid blocking
-    loop = asyncio.get_event_loop()
+    loop = asyncio.get_running_loop()
     response = await loop.run_in_executor(
         None,
         lambda: model.generate_content(prompt),

@@ -76,7 +76,7 @@ class ClassifyRequest(BaseModel):
 class ClassifyBatchRequest(BaseModel):
     """Request body for batch classification."""
 
-    texts: list[str] = Field(..., min_items=1, description="List of input texts to classify.")
+    texts: list[str] = Field(..., min_length=1, description="List of input texts to classify.")
 
 
 class HealthResponse(BaseModel):

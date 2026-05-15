@@ -5,7 +5,7 @@ import json
 import os
 import sys
 import time
-from datetime import datetime
+from datetime import datetime, UTC
 
 import httpx
 
@@ -68,7 +68,7 @@ def _risk_bar(score: float, width: int = 30) -> str:
 
 
 def render_markdown(results: list[dict], health: dict) -> str:
-    now = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
+    now = datetime.now(UTC).strftime("%Y-%m-%d %H:%M UTC")
     provider = health.get("provider", "unknown")
     model = health.get("model", "unknown")
 
